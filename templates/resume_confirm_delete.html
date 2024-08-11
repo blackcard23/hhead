@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ru">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Подтверждение удаления</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+<body>
+    <h1>Подтверждение удаления резюме</h1>
+    <p>Вы уверены, что хотите удалить резюме "{{ object.nazvanie_vakansii }}"?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Удалить</button>
+        <a href="{% url 'spisok_rezume' %}">Отмена</a>
+    </form>
+</body>
+</html>

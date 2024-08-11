@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Список вакансий</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+<body>
+
+    <div class="head">
+        <a href="{% url 'main' %}">
+            <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/6a/05/bf/6a05bff0-567f-18e6-7792-57f075db7e1b/AppIcon-0-0-1x_U007emarketing-0-7-0-85-220.png/1200x630wa.png" alt="Главная страница"/>
+        </a>
+        <h1>Добро пожаловать</h1>
+        <a href="{% url 'login' %}"><h1>Вход</h1></a>
+        <a href="{% url 'register' %}"><h1>Регистрация</h1></a>
+        <a href="{% url 'logout' %}"><h1>Выход</h1></a>
+    </div>
+
+    <h1>Список вакансий</h1>
+    <ul>
+        {% for vacancy in vakansii %}
+            <li>
+                <a href="{% url 'detail_vakansii' vacancy.pk %}">{{ vacancy.nazvanie }}</a> -
+                <a href="{% url 'udalenie_vakansii' vacancy.pk %}">Удалить</a>
+            </li>
+        {% empty %}
+            <li>Нет вакансий</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'sozdanie_vakansii' %}">Добавить вакансию</a>
+    <a href="{% url 'spisok_rezume' %}">Перейти к списку резюме</a>
+</body>
+</html>

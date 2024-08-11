@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ru">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Детали резюме</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+<body>
+    <h1>{{ resume.nazvanie_vakansii }}</h1>
+    <p><strong>Имя:</strong> {{ resume.imya }}</p>
+    <p><strong>Фамилия:</strong> {{ resume.familiya }}</p>
+    <p><strong>Отчество:</strong> {{ resume.otchestvo }}</p>
+    <p><strong>Дата рождения:</strong> {{ resume.data_rozhdeniya }}</p>
+    <p><strong>Email:</strong> {{ resume.email }}</p>
+    <p><strong>Навыки:</strong> {{ resume.navyki }}</p>
+    <p><strong>Опыт:</strong> {{ resume.opyt }}</p>
+    <p><strong>Образование:</strong> {{ resume.obrazovanie }}</p>
+    <a href="{% url 'spisok_rezume' %}">Назад к списку резюме</a>
+    <br>
+    <a href="{% url 'spisok_vakansii' %}">Перейти к списку вакансий</a>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ru">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Детали вакансии</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+<body>
+    <h1>{{ vacancy.nazvanie }}</h1>
+    <p><strong>Компания:</strong> {{ vacancy.nazvanie_kompanii }}</p>
+    <p><strong>Зарплата:</strong> {{ vacancy.zarplata }}</p>
+    <p><strong>Навыки и требования:</strong> {{ vacancy.trebovanie_navyki }}</p>
+    <p><strong>Обязанности:</strong> {{ vacancy.obyazannosti }}</p>
+    <p><strong>Адрес:</strong> {{ vacancy.adres }}</p>
+    <a href="{% url 'spisok_vakansii' %}">Назад к списку вакансий</a>
+    <br>
+    <a href="{% url 'spisok_rezume' %}">Перейти к списку резюме</a>
+</body>
+</html>
